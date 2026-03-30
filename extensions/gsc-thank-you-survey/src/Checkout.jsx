@@ -32,17 +32,16 @@ function Extension() {
       };
 
       console.log('Submitting payload:', payload);
-
-      const response = await fetch(
-        'https://cliff-flash-plains-guest.trycloudflare.com/api/survey-submit',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'text/plain',
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+const response = await fetch(
+  'https://gsc-survey-app.onrender.com/api/survey-submit',
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'text/plain',
+    },
+    body: JSON.stringify(payload),
+  }
+);
 
       const text = await response.text();
       console.log('Backend status:', response.status);
